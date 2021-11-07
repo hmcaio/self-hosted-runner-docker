@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+    my-runner-00:
+      image: tcardonne/github-runner:ubuntu-20.04
+      environment:
+        RUNNER_NAME: "my-runner-00"
+        RUNNER_REPOSITORY_URL: ${RUNNER_REPOSITORY_URL}
+        GITHUB_ACCESS_TOKEN: ${GITHUB_ACCESS_TOKEN}
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
